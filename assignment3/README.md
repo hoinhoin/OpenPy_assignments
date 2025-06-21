@@ -1,3 +1,10 @@
+#Table of Contents
+[TOP](#top)
+[PS](#ps)
+[JOBS](#jobs)
+[KILL](#kill)
+
+
 # top
 
 The **`top`** (**t**able **o**f **p**rocesses) command shows a dynamic, real-time view of running processes and **kernel**-managed tasks in Linux. The command also provides a system information summary that shows resource utilization, including **CPU** and **memory usage**.
