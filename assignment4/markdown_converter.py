@@ -31,8 +31,12 @@ def convert_markdown_to_html(markdown_file_path, output_file_path=None):
     
 def main():
 
-    print("checking")
     
+    markdown_file = sys.argv[1]
+    output_file = sys.argv[2] if len(sys.argv) > 2 else None
+    
+    
+    convert_markdown_to_html(markdown_file, output_file)
 
 
 if __name__ == "__main__":
