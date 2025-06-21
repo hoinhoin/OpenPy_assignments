@@ -21,8 +21,8 @@ top
 | **`-b`** | Batch mode |
 | **`-c`** | Toggle command line/program name |
 | **`-d [secs.tenths]`** | Delay time interval |
-| **`-e [k | m | g | t | p]`** | Toggle task memory scaling |
-| **`-E [k | m | g | t | p | e]`** | Toggle summary memory scaling |
+| **`-e [k / m / g / t / p]`** | Toggle task memory scaling |
+| **`-E [k / m / g / t / p / e]`** | Toggle summary memory scaling |
 | **`-H`** | Threads mode operation |
 | **`-i`** | Idle process toggle |
 | **`-n`** | Limit iteration number |
@@ -31,6 +31,6 @@ top
 | **`-p [N1, N2...]`** | Monitor process IDs mode |
 | **`-s`** | Secure mode operation |
 | **`-S`** | Cumulative time toggle |
-| **`-u | -U [ID or name]`** | User filter mode |
+| **`-u / -U [ID or name]`** | User filter mode |
 | **`-w [number]`** | Output width override |
 | **`-1`** | Single/separate CPU states toggle |
