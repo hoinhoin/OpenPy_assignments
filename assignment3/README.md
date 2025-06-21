@@ -147,3 +147,23 @@ The `ps` command displays information about active processes running on the syst
 | **-N** | Omits thread statistics collection. |
 | **-n** *NameList* | Specifies an alternate system namelist file. |
 
+# jobs
+
+### Purpose
+
+Displays status of jobs in the current session.
+
+```bash
+jobs [  -l | -n | -p ] [ JobID ... ]
+```
+
+### Description
+
+The `jobs` command displays the status of jobs started in the current shell environment, showing information for all active jobs when no specific JobID is specified, and automatically removing terminated jobs from the shell's process list. Since it operates within the shell's job control system, it's implemented as a built-in command in Korn shell and POSIX shell rather than as a standalone executable like `/usr/bin/jobs`, which cannot function properly in its own execution environment due to lack of applicable jobs to manipulate. The command outputs process IDs one per line when the `-p` flag is used, or provides detailed job information in a multi-field format when no flags are specified.
+
+| **Item** | **Description** |
+| --- | --- |
+| **-l** | Provides more information about each job listed. (job number, current job, process group ID, state, command that initiated the job) |
+| **-n** | Displays only jobs that have stopped or exited since last notified. |
+| **-p** | Displays the process IDs for the process group leaders for the selected jobs. |
+
