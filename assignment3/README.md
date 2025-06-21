@@ -167,3 +167,55 @@ The `jobs` command displays the status of jobs started in the current shell envi
 | **-n** | Displays only jobs that have stopped or exited since last notified. |
 | **-p** | Displays the process IDs for the process group leaders for the selected jobs. |
 
+# kill
+
+### Purpose
+
+Sends a signal to running processes.
+
+
+### Description
+
+The `kill` command sends signals to running processes, defaulting to the SIGTERM signal which normally terminates processes, and requires specifying the process ID (PID) which can be found through background process reports from the shell or using the `ps` command. Root users can terminate any process, while regular users can only kill processes they initiated, and the command accepts signal names (case-insensitive, without SIG prefix) or numbers, with signal number 0 used specifically to validate PID existence without actually sending a termination signal.
+
+| **Option / Argument** | **Description** |
+| --- | --- |
+| **-s {SignalName | SignalNumber}** | Sends the specified signal by name or number (e.g., -s KILL or -s 9). |
+| **-SignalName** | Sends the specified signal using its name (e.g., -HUP). |
+| **-SignalNumber** | Sends the specified signal using its number (e.g., -9); use `--` to avoid confusion with PID. |
+| *ProcessID* | Sends the signal to a specific process or group based on the value of PID. |
+| **-l** | Lists all supported signal names. |
+| **-l ExitStatus** | Shows the signal name for a given exit status or signal number. |
+
+# Examples
+
+1. To stop a given process, enter the following command:This stops process  by sending it the default **SIGTERM** signal. Note that process  might not actually stop if it has made special arrangements to ignore or override the **SIGTERM** signal.
+    
+    ```bash
+    kill 1095
+    ```
+    
+2. To stop several processes that ignore the default signal, enter the following command:This sends signal 9, the **SIGKILL** signal, to processes  and . The **SIGKILL** signal is a special signal that normally cannot be ignored or overridden.
+    
+    
+    ```bash
+    kill -kill 2098 1569
+    ```
+    
+3. To stop all of your processes and log yourself off, enter the following command:This sends signal 9, the **SIGKILL** signal, to all processes that have a process group ID equal to the senders process group ID. Because the shell cannot ignore the **SIGKILL** signal, this command also stops the login shell and logs you off.
+    
+    
+    ```bash
+    kill -kill 0
+    ```
+    
+4. To stop all processes that you own, enter the following command:This command sends signal 9, the **SIGKILL** signal, to all processes that are owned by the effective user, even those processes that are started at other workstations and that belong to other process groups. If a listing that you requested is being printed, it is also stopped.
+    
+    
+    ```bash
+    kill -9 -1
+    
+    ```
+    
+5. To send a different signal code to a process, enter the following command:The name of the **kill** command is misleading because many signals, including **SIGUSR1**, do not stop processes. The action that is taken on **SIGUSR1** is defined by the particular application you are running.
+
