@@ -116,3 +116,34 @@ The *Process List* displays detailed information about each active process.
 - **`COMMAND`**. The program, service, or command responsible for each active process.
 
 ![Process list in top command output.](https://phoenixnap.com/kb/wp-content/uploads/2024/10/process-list.png)
+
+
+# ps
+
+### Purpose
+
+Shows status of processes. This document describes the standard AIX **ps** command and the System V version of the **ps** command.
+
+### Description
+
+The `ps` command displays information about active processes running on the system, showing process status to standard output and optionally including kernel threads with the `-m` flag. By default, it shows processes for the current terminal, while various flags like `-f`, `-o`, `-l`, `-s`, `-u`, and `-v` control the amount of detail displayed rather than which processes are listed. The command examines memory to determine original command names and parameters when processes were created, displaying kernel-stored names in square brackets when this information is unavailable, and has limitations including a maximum of 128 items for parameter lists and respect for the `COLUMNS` environment variable for screen formatting.
+
+| **Option** | **Description** |
+| --- | --- |
+| **-A** | Displays information about all processes. |
+| **-a** | Displays all processes except session leaders and those not associated with a terminal. |
+| **-c** *Clist* | Displays only processes in the specified workload management classes. |
+| **-d** | Displays all processes except session leaders. |
+| **-e** | Displays all processes except kernel processes. |
+| **-F** *Format* | Same as the `-o` *Format* option. |
+| **-f** | Produces a full-format listing. |
+| **-G** *Glist* | Displays only processes in the specified effective groups. |
+| **-g** *Glist* | Displays only processes in the specified process groups. |
+| **-k** | Displays kernel processes. |
+| **-l** | Produces a long-format listing. |
+| **-L** *pidlist* | Lists descendants of each process ID in the given list. |
+| **-M** | Displays all 64-bit processes. |
+| **-m** | Displays kernel threads along with processes. |
+| **-N** | Omits thread statistics collection. |
+| **-n** *NameList* | Specifies an alternate system namelist file. |
+
