@@ -36,8 +36,11 @@ def main():
     output_file = sys.argv[2] if len(sys.argv) > 2 else None
     
     
-    convert_markdown_to_html(markdown_file, output_file)
-
+    try:
+        convert_markdown_to_html(markdown_file, output_file)
+        print("변환이 완료되었습니다!")
+    except Exception as e:
+        print(f"오류 발생: {e}")
 
 if __name__ == "__main__":
     main()
