@@ -28,6 +28,41 @@ def convert_markdown_to_html(markdown_file_path, output_file_path=None):
             'nl2br'             # 줄바꿈 자동 변환
         ]
     )
+
+        # HTML 헤더
+    html_header = """<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마크다운 변환 결과</title>
+
+</head>
+<body>
+"""
+    
+    # HTML 푸터 부분
+    html_footer = """
+</body>
+</html>"""
+    
+    # 완전한 HTML 문서 생성
+    complete_html = html_header + html_body + html_footer
+    
+    # 출력 파일 경로가 지정되지 않았으면 자동 생성
+    if output_file_path is None:
+        base_name = os.path.splitext(os.path.basename(markdown_file_path))[0]
+        output_file_path = f"{base_name}.html"
+    
+    # HTML 파일로 저장
+    try:
+        with open(output_file_path, 'w', encoding='utf-8') as file:
+            file.write(complete_html)
+        print(f"HTML 파일이 성공적으로 생성되었습니다: {output_file_path}")
+    except Exception as e:
+        raise Exception(f"HTML 파일 저장 실패: {e}")
+    
+    return complete_html
     
 def main():
 
