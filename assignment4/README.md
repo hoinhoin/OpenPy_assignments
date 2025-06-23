@@ -19,3 +19,8 @@ python markdown_converter.py example.md
 # 출력 파일명 직접 지정
 python markdown_converter.py example.md output.html
 ```
+
+# 예시
+![image](https://github.com/user-attachments/assets/7ecacd98-04cd-46c5-81f6-ac95549934e3)
+
+![image](https://github.com/user-attachments/assets/647b2dbc-f3b1-4c4c-a2ce-632b8af1d0ca)
