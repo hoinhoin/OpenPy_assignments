@@ -147,6 +147,12 @@ def convert_markdown_to_html(markdown_file_path, output_file_path=None):
     
 def main():
 
+    # 입력이 부정확할 때 사용법 설명 출력
+    if len(sys.argv) < 2:
+        print("사용법: python markdown_converter.py <마크다운_파일_경로> [출력_파일_경로]")
+        print("예시: python markdown_converter.py example.md")
+        print("예시: python markdown_converter.py example.md output.html")
+        return
     
     markdown_file = sys.argv[1]
     output_file = sys.argv[2] if len(sys.argv) > 2 else None
