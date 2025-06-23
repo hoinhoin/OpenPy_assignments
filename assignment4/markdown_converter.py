@@ -26,6 +26,7 @@ def convert_markdown_to_html(markdown_file_path, output_file_path=None):
     except Exception as e:
         raise Exception(f"마크다운 파일 읽기 실패: {e}")
     
+    # ************ 블로그 참고 https://toramko.tistory.com/entry/python-markdown-to-HTML-%EB%B3%80%ED%99%98%ED%95%98%EA%B8%B0-%ED%85%8C%EC%9D%B4%EB%B8%94-%ED%85%8C%EB%91%90%EB%A6%AC-%EC%84%A4%EC%A0%95
     # 마크다운을 HTML로 변환 (테이블, 코드 하이라이팅, 기타 확장 기능 포함)
     html_body = markdown.markdown(
         markdown_content, 
@@ -138,7 +139,10 @@ def convert_markdown_to_html(markdown_file_path, output_file_path=None):
     
     # 완전한 HTML 문서 생성
     complete_html = html_header + html_body + html_footer
-    
+
+    # ************************
+
+
     # 출력 파일 경로가 지정되지 않았으면 자동 생성
     if output_file_path is None:
         base_name = os.path.splitext(os.path.basename(markdown_file_path))[0]
