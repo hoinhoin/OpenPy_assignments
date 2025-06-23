@@ -3,7 +3,16 @@ import os
 import sys
 
 def convert_markdown_to_html(markdown_file_path, output_file_path=None):
-
+    """
+    마크다운 파일을 HTML로 변환하는 함수
+    
+    입력값:
+        markdown_file_path: 변환할 마크다운 파일 경로
+        output_file_path (optional): 출력할 HTML 파일 경로. 없으면 자동 생성
+    
+    반환값:
+        변환된 HTML 내용
+    """
     
     # 마크다운 파일이 있는지 확인
     if not os.path.exists(markdown_file_path):
